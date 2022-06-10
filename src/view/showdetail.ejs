@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('includes/head') %>
+
+<body>
+
+    <div class="details">
+        <%if(show.image !== null){%>
+            <img src="<%=show.image.medium %>" alt="">
+            <h1><%= show.name %></h1>
+        <h2>Status: <%= show.status %></h2>
+        <h2><%= total %> Temporada(s)</h2>
+        <h2>Rating: <%= show.rating.average %></h2>
+            <%-show.summary%>
+
+    <%}else{%>
+        <%null%>
+            <%  }%>
+</div>
+
+
+    <!-- <h2>Genero <%= show.genero %></h2> -->
+    
+    <!-- <h3>Lançado em: <%= show.lancamento %></h3> -->
+
+    <!-- <p><%= show.sinopse %></p> -->
+
+</body>
+
+</html>

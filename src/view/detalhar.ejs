@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('includes/head') %>
+
+<body>
+<div class="feed">
+    <% show.forEach(shows => { %>
+        <%if(shows.show.image !== null){%>
+            <a href="/showdetail/<%= shows.show.id %>">
+
+            <img src="<%= shows.show.image.medium %>" alt="">
+    </a>
+    
+    <%}else{%>
+        <%null%>
+            <%  }%>
+    <% }) %>
+</div>
+    <!-- <h2>Genero <%= show.genero %></h2> -->
+    
+    <!-- <h3>Lançado em: <%= show.lancamento %></h3> -->
+
+    <!-- <p><%= show.sinopse %></p> -->
+
+</body>
+</html>
