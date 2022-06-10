@@ -1,8 +1,9 @@
 const express = require("express");
 const axios = require('axios');
-const { buscaPostNaAPI } = require("./jsonplaceholder/detail-post");
-const { showDetails } = require("./jsonplaceholder/showdetails");
-const { showSeasons } = require("./jsonplaceholder/seasons");
+const { buscaPostNaAPI } = require("./tvmaze/detail-post");
+const { showDetails } = require("./tvmaze/showdetails");
+const { showSeasons } = require("./tvmaze/seasons");
+const { AllShows } = require("./tvmaze/allshows");
 
 const app = express();
 
@@ -26,6 +27,17 @@ app.post('/detalhar', async (req, res) => {
     }
     return res.send("ooops, id nao encontrado");
 })
+
+app.get('/home', async (req, res) => {
+    const resultado = await AllShows();
+
+
+    // if (resultado) {
+        return res.render( 'home', { todos: resultado });
+    // }
+    // return res.send("ooops, id nao encontrado");
+})
+
 
 app.get('/showdetail/:id', async (req, res) => {
     const { id } = req.params;

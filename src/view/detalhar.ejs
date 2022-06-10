@@ -5,16 +5,22 @@
 
 <body>
 <div class="feed">
+
+
+
     <% show.forEach(shows => { %>
+        <div class="content_img">
         <%if(shows.show.image !== null){%>
             <a href="/showdetail/<%= shows.show.id %>">
 
-            <img src="<%= shows.show.image.medium %>" alt="">
-    </a>
-    
-    <%}else{%>
-        <%null%>
+            <img src="<%= shows.show.image.medium %>" alt="<%= shows.show.name %>">
+            <div><%= shows.show.name %></div>
+        </a>
+        
+        <%}else{%>
+            <%null%>
             <%  }%>
+        </div>
     <% }) %>
 </div>
     <!-- <h2>Genero <%= show.genero %></h2> -->

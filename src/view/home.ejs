@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('includes/head') %>
+
+<body>
+    
+    <h1>Minha super pagina</h1>
+
+    <h2>JSON PLACEHOLDER</h2>
+
+    <h3>Hora de buscar</h3>
+    <form action="/detalhar" method="POST">
+        <input type="text" name="ShowName">
+        <br>
+        <button type="submit">Go Detail</button>
+        <br>
+    </form>
+
+    <hr />
+    <div class="feed">
+
+<% todos.forEach(shows=> { %>
+    <div class="content_img">
+        <%if(shows.image !==null){%>
+            <a href="/showdetail/<%= shows.id %>">
+
+                <img src="<%= shows.image.medium %>" alt="<%= shows.name %>">
+                <div>
+                    <%= shows.name %>
+                </div>
+            </a>
+
+            <%}else{%>
+                <%null%>
+                    <% }%>
+    </div>
+    <% }) %>
+        </div>
+
+</body>
+
+</html>
