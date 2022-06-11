@@ -11,7 +11,10 @@ header {
     justify-content: flex-end;
     align-items: center;
     padding: 20px 50px;
-    box-shadow: 0 1px 8px #ddd;
+    margin-bottom: 5%;
+    background-color: #000;
+              color: #fff;
+
 }
 
 #nav-title {
@@ -34,25 +37,42 @@ header a {
 header a:hover {
     color: #04AA6D;
 }
-
+body{
+    background-color: rgb(20, 20, 20);
+    color: #fff;
+}
 .feed{
+    
+    margin-top: 5%;
       display: flex;
       flex-wrap: wrap;
       text-align: center;
       padding: 5px;
+          margin-left: 6%;
+          margin-right: 5%;
     }
     a{
         font-size: 10px;
         margin-bottom: 2px;
-                margin-left: 2px;
+                margin-left: 5px;
 
 }
 
-.details{
-    text-align: center;
+
+
+
+.image{
+    float: left;
+    margin-left: 20%;
+    padding-right: 5%;
+    
+}
+.info{
+    margin-right: 20%;
+    text-align: left;
     padding: 50px;
-    margin-left: 25%;
-        margin-right: 25%;
+              color: #fff;
+
 
 }
 .content_img {
@@ -82,7 +102,7 @@ header a:hover {
 }
 
 .content_img:hover div {
-    width: 150px;
+    width: 140px;
     padding: 8px 15px;
     visibility: visible;
     opacity: 12;

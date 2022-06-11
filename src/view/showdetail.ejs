@@ -4,16 +4,20 @@
 <%- include('includes/head') %>
 
 <body>
+    <%- include('includes/navbar') %>
 
-    <div class="details">
-        <%if(show.image !== null){%>
+    <%if(show.image !== null){%>
+        <div class="image">
             <img src="<%=show.image.medium %>" alt="">
+        </div>
+        <div class="info">
             <h1><%= show.name %></h1>
         <h2>Status: <%= show.status %></h2>
         <h2><%= total %> Season(s)</h2>
         <h2>Rating: <%= show.rating.average %></h2>
+        <div class="details">
             <%-show.summary%>
-
+</div>
     <%}else{%>
         <%null%>
             <%  }%>
