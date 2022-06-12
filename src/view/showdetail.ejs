@@ -2,6 +2,8 @@
 <html lang="en">
 
 <%- include('includes/head') %>
+<% var data = new Date(show.premiered) %>
+<% const meses = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul","Aug","Sep","Oct","Nov","Dec"]; %>
 
 <body>
     <%- include('includes/navbar') %>
@@ -10,25 +12,45 @@
         <div class="image">
             <img src="<%=show.image.medium %>" alt="">
         </div>
+        <h1 class="name"><%= show.name %></h1>
         <div class="info">
-            <h1><%= show.name %></h1>
-        <h2>Status: <%= show.status %></h2>
-        <h2><%= total %> Season(s)</h2>
-        <h2>Rating: <%= show.rating.average %></h2>
-        <div class="details">
-            <%-show.summary%>
-</div>
+        <p> Status: <%= show.status %> | </p>
+        <p> | <%= total %> Season(s) | </p>
+        <p> | <%= ((meses[(data.getMonth())] + ". " + data.getDate() + ", " + data.getFullYear())); %></p>
+    </div>
+        <div class="genres">
+        <% show.genres.forEach(shows=> { %>
+            <p>| <%= shows %> | </p>
+            <% }) %>
+        </div>
+            <br>
+            <div class="rating">
+            <h2>Rating: <%= show.rating.average %></h2>
+
     <%}else{%>
         <%null%>
             <%  }%>
 </div>
 
+<div class="details">
+    <h3>Synopsis</h3>
+    <%-show.summary%>
+</div>
+<div class="images">
+<% for(var a=0; a<=6; a++){ %>
+    <%if(images.length >= 4 && images[a]){%>
+            <%if(images[a].resolutions.original.width > images[a].resolutions.original.height){%>
+    <img class="originalimg" src="<%= images[a].resolutions.original.url %>" alt="">
+        <%}else{%>
+            <%null%>
+                <% }%>
+    <%}else{%>
+        <%null%>
+            <% }%>
+    <% }%>
+</div>
 
-    <!-- <h2>Genero <%= show.genero %></h2> -->
-    
-    <!-- <h3>Lançado em: <%= show.lancamento %></h3> -->
 
-    <!-- <p><%= show.sinopse %></p> -->
 
 </body>
 

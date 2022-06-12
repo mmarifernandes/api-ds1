@@ -3,6 +3,7 @@ const axios = require('axios');
 const { buscaPostNaAPI } = require("./tvmaze/detail-post");
 const { showDetails } = require("./tvmaze/showdetails");
 const { showSeasons } = require("./tvmaze/seasons");
+const { showImages } = require("./tvmaze/images");
 const { AllShows } = require("./tvmaze/allshows");
 
 const app = express();
@@ -42,16 +43,18 @@ app.get('/home', async (req, res) => {
 app.get('/showdetail/:id', async (req, res) => {
     const { id } = req.params;
     const resultado = await showDetails(id);
-        const seasons = await showSeasons(id);
+    const seasons = await showSeasons(id);
+    const images = await showImages(id);
 
     console.log(resultado)
     const total = seasons.length;
-    console.log(total)
+    console.log(images.length)
 
     if (resultado) {
         return res.render('showdetail', {
             show: resultado,
-            total: total
+            total: total,
+            images: images
         });
     }
     return res.send("ooops, id nao encontrado");

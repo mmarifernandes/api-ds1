@@ -58,20 +58,49 @@ body{
 
 }
 
+.image img{
+    position: relative;
+    padding-bottom: 10px;
+}
 
+.details{
+    position: relative;
+    padding-top: 10%;
+    width: 60%;
+    margin-left: 20%;
 
+}
 
 .image{
     float: left;
     margin-left: 20%;
-    padding-right: 5%;
+    padding-right: 2%;
     
 }
 .info{
-    margin-right: 20%;
+    margin-right: 5%;
     text-align: left;
-    padding: 50px;
+    padding-top: 2%;
+        padding-right: 2%;
+            padding-bottom: 0.5%;
+
               color: #fff;
+              display: flex;
+
+
+}
+.genres{
+    display: flex;
+}
+
+.name {
+    margin-right: 5%;
+    text-align: left;
+ padding-top: 2%;
+ padding-right: 2%;
+ padding-bottom: 2%;
+    color: #fff;
+    display: flex;
 
 
 }
@@ -107,3 +136,16 @@ body{
     visibility: visible;
     opacity: 12;
 }
+
+.originalimg{
+    width: 11%;
+    height: 10%;
+}
+
+.images{
+text-align: center; 
+margin-top: 4%;
+padding-bottom: 10%;
+}
+
+
