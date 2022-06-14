@@ -29,7 +29,7 @@ app.post('/detalhar', async (req, res) => {
     return res.send("ooops, id nao encontrado");
 })
 
-app.get('/', async (req, res) => {
+app.get('/home', async (req, res) => {
     const resultado = await AllShows();
 
 
@@ -60,31 +60,31 @@ app.get('/showdetail/:id', async (req, res) => {
     return res.send("ooops, id nao encontrado");
 })
 
-// app.get('/', async (req, res) => {
+app.get('/', async (req, res) => {
+res.redirect('/home');
+    // // https://swapi.dev/api/films/NUMERO
 
-//     // https://swapi.dev/api/films/NUMERO
+    // // const numero = Math.floor(1 + Math.random() * 6);
+    // const urlBusca = `https://api.tvmaze.com/search/shows?q=${req.query.show}`; 
 
-//     // const numero = Math.floor(1 + Math.random() * 6);
-//     const urlBusca = `https://api.tvmaze.com/search/shows?q=${req.query.show}`; 
+    // try {
+    //     const responseApi = await axios.get(urlBusca);
 
-//     try {
-//         const responseApi = await axios.get(urlBusca);
-
-//         res.send({
-//             // numero,
-//             urlBusca,
-//             statusBusca: responseApi.status,
-//             dataBusca: responseApi.data
-//         });
-//     } catch (error) {
-//         console.log({error})
-//         if (error.response.status == 404)
-//             res.send('NAO FOI POSSIVEL LOCALIZAR O RECURSO NA API');
-//         else
-//             res.send('ERRO DESCONHECIDO...');
-//     }
+    //     res.send({
+    //         // numero,
+    //         urlBusca,
+    //         statusBusca: responseApi.status,
+    //         dataBusca: responseApi.data
+    //     });
+    // } catch (error) {
+    //     console.log({error})
+    //     if (error.response.status == 404)
+    //         res.send('NAO FOI POSSIVEL LOCALIZAR O RECURSO NA API');
+    //     else
+    //         res.send('ERRO DESCONHECIDO...');
+    // }
     
-// });
+});
 
 
 const PORT = process.env.PORT;
