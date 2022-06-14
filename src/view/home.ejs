@@ -6,11 +6,13 @@
         <%- include('includes/navbar') %>
 
     <div  style="text-align: center;">
-    <h3>Pesquisar</h3>
-    <form action="/detalhar" method="POST">
-        <input type="text" name="ShowName">
+    <h3>Aperte aqui :)</h3>
+    <form action="/detalhar" method="POST" class="search-bar">
+        <input type="search" name="ShowName" pattern=".*\S.*" required>
+        <button class="search-btn" type="submit">
+            <span>Search</span>
+        </button>
         <br>
-        <button type="submit">Go Detail</button>
         <br>
     </form>
 </div>

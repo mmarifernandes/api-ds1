@@ -22,10 +22,11 @@ app.post('/detalhar', async (req, res) => {
     const resultado = await buscaPostNaAPI(ShowName);
     console.log({resultado})
     const total = resultado.length;
+    console.log(ShowName)
     // console.log(total)
 
     if (resultado) {
-        return res.render( 'detalhar', { show: resultado, total: total });
+        return res.render( 'detalhar', { show: resultado, total: total, pesquisa: ShowName });
     }
     return res.send("ooops, id nao encontrado");
 })
