@@ -13,8 +13,9 @@ app.set('view engine', 'ejs');
 app.set('views', './src/view');
 
 app.use(express.static('public'));
-
-app.use(express.urlencoded());
+app.use(express.urlencoded({
+    extended: true,
+}));
 
 app.post('/detalhar', async (req, res) => {
     const { ShowName } = req.body;
@@ -88,6 +89,8 @@ res.redirect('/home');
 
 
 const PORT = process.env.PORT;
-
+console.log({
+    PORT
+});
 app.listen(PORT, () => console.log(`Server iniciado na porta ${PORT}`));
 
